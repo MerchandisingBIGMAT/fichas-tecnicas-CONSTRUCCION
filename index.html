@@ -172,7 +172,6 @@ body.measure .wrap{display:block!important;position:absolute;left:-9999px}
      <button class="sec" id="rotR" disabled title="Girar solo la imagen del producto 90° a la derecha">⟳ Girar derecha</button>
     </div>
    </div>
-   <button class="sec" id="btnSrc" style="margin-bottom:10px">Descargar index.html (para GitHub)</button>
    <div class="status" id="status"></div>
   </aside>
   <main>
@@ -580,7 +579,6 @@ $('btnImg').onclick=()=>$('fi').click();
 const rotate=d=>{if(!rows.length)return;const r=rows[cur];r._rot=((r._rot||0)+d+360)%360;isolate()};
 $('rotL').onclick=()=>rotate(-90);
 $('rotR').onclick=()=>rotate(90);
-$('btnSrc').onclick=async()=>{let t;try{t=await(await fetch(location.href)).text();if(!/<html/i.test(t))throw 0}catch(e){t='<!DOCTYPE html>\n'+document.documentElement.outerHTML}await saveBlob(new Blob([t],{type:'text/html'}),'index.html')};
 async function saveBlob(blob,name){
  let dl=null;
  try{dl=window.claude&&claude.use?await claude.use('downloads'):null}catch(e){dl=null}
