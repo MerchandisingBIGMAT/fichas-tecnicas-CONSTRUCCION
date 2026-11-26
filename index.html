@@ -388,7 +388,7 @@ async function isolate(){
 }
 function render(){
  const st=$('stage');
- if(!rows.length){st.innerHTML='<div class="status" style="padding:40px">No hay filas en el Excel.</div>';return}
+ if(!rows.length){st.innerHTML='<div class="status" style="padding:40px">Carga un Excel para ver la vista previa.</div>';return}
  st.innerHTML=rows.map(pageHTML).join('');
  const sel=$('sel');
  sel.innerHTML=rows.map((r,i)=>`<option value="${i}">${i+1}. ${esc(ln8(r.CODIGO_LN)||'—')} · ${esc(r.MODELO||'')}</option>`).join('');
